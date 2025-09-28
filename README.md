@@ -6,17 +6,17 @@ This is the source code for my Neocities site. It's built with all the dependenc
 
 ## Inspirations
 
-<https://onlywonder.net/home>
-<https://veronika.skin/>
-<https://ribo.zone/>
-<https://mileshouse.neocities.org/>
-<https://humbird0.com/makes/show.htm>
-<https://dinpixels.neocities.org/>
-<https://velvetblue.neocities.org/index2>
-<https://fulvern.neocities.org/home>
-<https://hexate.neocities.org/>
-<https://luvrksknskyejourney.org/home/index.html>
-<https://oyaswmi.net/>
-<https://princss.online/>
-<https://dannarchy.com/>
-<https://petrapixel.neocities.org/>
+- <https://onlywonder.net/home>
+- <https://veronika.skin/>
+- <https://ribo.zone/>
+- <https://mileshouse.neocities.org/>
+- <https://humbird0.com/makes/show.htm>
+- <https://dinpixels.neocities.org/>
+- <https://velvetblue.neocities.org/index2>
+- <https://fulvern.neocities.org/home>
+- <https://hexate.neocities.org/>
+- <https://luvrksknskyejourney.org/home/index.html>
+- <https://oyaswmi.net/>
+- <https://princss.online/>
+- <https://dannarchy.com/>
+- <https://petrapixel.neocities.org/>
