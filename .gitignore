@@ -224,3 +224,6 @@ vite.config.ts.timestamp-*
 
 # 11ty/Eleventy
 _site
+
+# x3n1.neocities.org
+TODO.md
