@@ -1,0 +1,25 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
+      - uses: actions/setup-node@89d709d423dc495668cd762a18dd4a070611be3f
+        cache: "pnpm"
+      - uses: pnpm/action-setup
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build site
+        run: pnpm run
+      - name: Deploy build to Neocities
+        uses: bcomnes/deploy-to-neocities@039f475bcbc0649c20e988cfec0b080d409546ab
+        with:
+          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+          cleanup: false
+          dist_dir: _site
