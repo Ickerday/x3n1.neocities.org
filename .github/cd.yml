@@ -12,7 +12,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build site
-        run: pnpm run
+        run: pnpm exec eleventy
       - name: Deploy build to Neocities
         uses: bcomnes/deploy-to-neocities@039f475bcbc0649c20e988cfec0b080d409546ab
         with:

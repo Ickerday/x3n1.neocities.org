@@ -1,0 +1,20 @@
+---
+layout: layout.html
+---
+
+<link href="/chattable.css" rel="stylesheet" type="text/css" media="all" />
+
+<h2>
+  Hi! Welcome to my pierdolnik<a
+    href="https://en.wiktionary.org/wiki/pierdolnik"
+    >*</a
+  >
+  of sorts.
+</h2>
+
+<p>
+  The older I get, the less I like technology. I'm trying to disconnect from
+  social media completely. I despise using LLMs. I make weirdly specific playlists.
+</p>
+
+<script></script>

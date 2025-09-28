@@ -1,0 +1,132 @@
+---
+layout: base-layout.html
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Personal site of x3n1/ickerday" />
+    <title>x3n1's pierdolnik</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Micro+5&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/chattable.css" rel="stylesheet" type="text/css" media="all" />
+
+    <script src="https://iframe.chat/scripts/main.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="jacquarda-bastarda-9-regular" style="font-size: 2.5em">
+        x3n1's pierdolnik
+      </h1>
+    </header>
+
+    <div class="content">
+      <aside id="sidebar-left" class="container">
+        <section id="about-me">
+          About me:
+          <ul>
+            <li>
+              Age: <span id="my-current-age" class="about-me-value">???</span>
+            </li>
+            <li>
+              Pronouns:
+              <span class="about-me-value">he/him/they/them/whatever</span>
+            </li>
+            <li>
+              Nationality:
+              <span class="about-me-value">Principality of Zeon</span>
+            </li>
+            <li>
+              Dexterity: <span class="about-me-value">usually left-handed</span>
+            </li>
+            <li>
+              MBTI:
+              <span class="about-me-value"
+                >MBTI was debunked... but probably E/INFP-T last time I did it
+                years ago</span
+              >
+            </li>
+            <li>Sign: <span>Scales</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Contact</h1>
+          <p>
+            I don't want any more of my contact info to be scraped and sold,
+            thank you! Let's all thank capitalism for ruining the Web for all of
+            us.
+          </p>
+        </section>
+
+        <section>
+          <iframe
+            id="chattable"
+            src="https://iframe.chat/embed?chat=x3n1-chat"
+          ></iframe>
+        </section>
+      </aside>
+
+      <main>{{ content }}</main>
+
+      <aside id="sidebar-right" class="container">
+        <section>
+          Navigation:
+          <nav>
+            <ul>
+              <li><a href="about-me.html">About me</a></li>
+              <li><a href="things-i-like.html">Things I like</a></li>
+              <li><a href="things-i-do.html">Things I do</a></li>
+              <li><a href="things-i-do.html">Drink log</a></li>
+              <li><a href="mecha.html">Mecha</a></li>
+              <li><a href="music.html">Music</a></li>
+              <li><a href="anime.html">Anime</a></li>
+              <li><a href="guitars.html">Guitars</a></li>
+              <li><a href="electronics.html">Electronics</a></li>
+              <li><a href="lego.html">LEGO</a></li>
+            </ul>
+          </nav>
+        </section>
+        <section>
+          <p>This site is <span id="site-age">???</span> days old</p>
+          <p>
+            This site was last updated at
+            <span id="site-updated-at">???</span>
+          </p>
+          <p>Congrats! You're viewer #<span id="visit-counter">???</span></p>
+        </section>
+      </aside>
+    </div>
+
+    <script>
+      (async () => {
+        chattable.initialize({});
+
+        const currentYear = new Date().getFullYear();
+        document.getElementById("current-year").innerText = currentYear;
+
+        const myCurrentAge = currentYear - 1996;
+        document.getElementById("my-current-age").innerText = myCurrentAge;
+
+        const siteInfo = await fetch(
+          "https://neocities.org/api/info?sitename=x3n1",
+          {
+            headers: { "Access-Control-Allow-Origin": "https://neocities.org" },
+          }
+        );
+        document.getElementById("visit-counter").innerText = new Date(
+          siteInfo.info.last_updated
+        ).toUTCString();
+      })();
+    </script>
+  </body>
+</html>

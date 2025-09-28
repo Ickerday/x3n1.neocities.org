@@ -1,0 +1,12 @@
+/* https://iframe.chat/help/elements/ */
+#chattable {
+  max-width: 200px;
+
+  #top_banner {
+    display: none;
+  }
+
+  #background {
+    display: none;
+  }
+}

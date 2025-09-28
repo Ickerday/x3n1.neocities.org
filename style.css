@@ -1,0 +1,79 @@
+/* FONTS */
+.micro-5-regular {
+  font-family: "Micro 5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.jacquarda-bastarda-9-regular {
+  font-family: "Jacquarda Bastarda 9", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  border: 10px var(--aquamarine) double;
+  margin: 0.5em;
+  padding: 2em;
+  background: var(--wheat);
+  background-color: color-mix(in srgb, var(--wheat) 90%, transparent);
+}
+
+.rendering-pixelated {
+  image-rendering: pixelated;
+}
+
+.about-me-value {
+  text-decoration: dotted;
+}
+
+/* STYLES */
+html {
+  --umber: #66544d;
+  --wheat: #fae1bb;
+  --aquamarine: #33dead;
+  --medium-slate-blue: #7568e8;
+  --polynesian-blue: #004e8a;
+
+  accent-color: var(--aquamarine);
+  background-color: var(--aquamarine);
+  background-image: url("./public/img/Sleeves_revised.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+html,
+body {
+  background-color: var(#000);
+
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+
+  /* font-family: "Micro 5", sans-serif; */
+  /* font-weight: 400; */
+  /* font-style: normal; */
+  /* font-size: 1.1em; */
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+#sidebar-left {
+  width: 15em;
+}
+
+#sidebar-right {
+  width: 15em;
+}
+
