@@ -7,7 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
       - uses: actions/setup-node@89d709d423dc495668cd762a18dd4a070611be3f
-        cache: "pnpm"
+        with:
+          cache: "pnpm"
       - uses: pnpm/action-setup
       - name: Install dependencies
         run: pnpm install
