@@ -37,7 +37,7 @@ html {
 
   accent-color: var(--aquamarine);
   background-color: var(--aquamarine);
-  background-image: url("./public/img/Sleeves_revised.svg");
+  background-image: url("/public/img/Sleeves_revised.svg");
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
@@ -76,4 +76,3 @@ body {
 #sidebar-right {
   width: 15em;
 }
-

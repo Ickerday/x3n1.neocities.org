@@ -20,3 +20,4 @@ This is the source code for my Neocities site. It's built with all the dependenc
 - <https://princss.online/>
 - <https://dannarchy.com/>
 - <https://petrapixel.neocities.org/>
+- <https://rice.place/>

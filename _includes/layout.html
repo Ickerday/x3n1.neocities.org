@@ -1,7 +1,3 @@
----
-layout: base-layout.html
----
-
 <!doctype html>
 <html>
   <head>
@@ -16,8 +12,18 @@ layout: base-layout.html
       href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Micro+5&display=swap"
       rel="stylesheet"
     />
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="/chattable.css" rel="stylesheet" type="text/css" media="all" />
+    <link
+      href="styles/style.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      href="styles/chattable.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
 
     <script src="https://iframe.chat/scripts/main.min.js"></script>
   </head>
@@ -107,22 +113,31 @@ layout: base-layout.html
       </aside>
     </div>
 
+    <footer>
+      <h4>Copyright 2025-<span id="current-year"></span> x3n1</h4>
+    </footer>
+
     <script>
+      chattable.initialize({});
+
+      const currentYear = new Date().getFullYear();
+      document.getElementById("current-year").innerText = currentYear;
+
+      const myCurrentAge = currentYear - 1996;
+      document.getElementById("my-current-age").innerText = myCurrentAge;
+
       (async () => {
-        chattable.initialize({});
-
-        const currentYear = new Date().getFullYear();
-        document.getElementById("current-year").innerText = currentYear;
-
-        const myCurrentAge = currentYear - 1996;
-        document.getElementById("my-current-age").innerText = myCurrentAge;
-
-        const siteInfo = await fetch(
+        const res = await fetch(
           "https://neocities.org/api/info?sitename=x3n1",
           {
-            headers: { "Access-Control-Allow-Origin": "https://neocities.org" },
+            headers: {
+              "Access-Control-Allow-Origin": "https://neocities.org",
+            },
           }
         );
+        const siteInfo = await res.json();
+        console.table(siteInfo);
+        document.getElementById("site-updated-at").innerText = siteInfo.info;
         document.getElementById("visit-counter").innerText = new Date(
           siteInfo.info.last_updated
         ).toUTCString();
