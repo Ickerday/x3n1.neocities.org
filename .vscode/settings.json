@@ -6,9 +6,15 @@
     "deployowania",
     "ickerday's",
     "INFP",
+    "Jacquarda",
     "MBTI",
     "Neocities",
+    "pjerdolnik",
     "webc",
     "Zeon"
-  ]
+  ],
+  "[liquid]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": true
+  }
 }

@@ -12,9 +12,9 @@
 }
 
 .container {
-  border: 10px var(--aquamarine) double;
+  border: 10px var(--wheat) groove;
   margin: 0.5em;
-  padding: 2em;
+  padding: 0.5em;
   background: var(--wheat);
   background-color: color-mix(in srgb, var(--wheat) 90%, transparent);
 }
@@ -24,7 +24,7 @@
 }
 
 .about-me-value {
-  text-decoration: dotted;
+  font-style: oblique;
 }
 
 /* STYLES */
@@ -35,22 +35,37 @@ html {
   --medium-slate-blue: #7568e8;
   --polynesian-blue: #004e8a;
 
-  accent-color: var(--aquamarine);
-  background-color: var(--aquamarine);
-  background-image: url("/public/img/Sleeves_revised.svg");
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
+  --pattern-size: 5px;
+  --c: #0000, var(--umber) 0.5deg 119.5deg, #0000 120deg;
+  --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+  --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+  --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+  background:
+    var(--g1),
+    var(--g1) var(--pattern-size) calc(1.73 * var(--pattern-size)),
+    var(--g2),
+    var(--g2) var(--pattern-size) calc(1.73 * var(--pattern-size)),
+    var(--g3) var(--pattern-size) 0,
+    var(--g3) 0 calc(1.73 * var(--pattern-size)) var(--aquamarine);
+  background-size: calc(2 * var(--pattern-size))
+    calc(3.46 * var(--pattern-size));
 }
 
 html,
 body {
-  background-color: var(#000);
-
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
+
+  color: black;
+  accent-color: var(--aquamarine);
+
+  scrollbar-color: var(--wheat);
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+
+  box-sizing: border-box;
 
   /* font-family: "Micro 5", sans-serif; */
   /* font-weight: 400; */

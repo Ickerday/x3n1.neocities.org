@@ -1,47 +1,34 @@
 <!doctype html>
-<html>
+<html class="custom-pattern">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Personal site of x3n1/ickerday" />
-    <title>x3n1's pierdolnik</title>
+    <title>{{ title }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Micro+5&display=swap"
-      rel="stylesheet"
-    />
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&family=Micro+5&display=swap" rel="stylesheet" />
     <link
       href="styles/style.css"
       rel="stylesheet"
       type="text/css"
-      media="all"
-    />
-    <link
-      href="styles/chattable.css"
-      rel="stylesheet"
-      type="text/css"
-      media="all"
-    />
-
-    <script src="https://iframe.chat/scripts/main.min.js"></script>
+      media="all" />
   </head>
 
   <body>
-    <header>
-      <h1 class="jacquarda-bastarda-9-regular" style="font-size: 2.5em">
-        x3n1's pierdolnik
-      </h1>
-    </header>
+    {% include '_header.html' %}
 
     <div class="content">
       <aside id="sidebar-left" class="container">
-        <section id="about-me">
-          About me:
+        <section id="section-about-me">
+          <h3>About me:</h3>
           <ul>
-            <li>
-              Age: <span id="my-current-age" class="about-me-value">???</span>
+            <li>Age:
+              <span class="about-me-value">{% myCurrentAge %}</span>
             </li>
             <li>
               Pronouns:
@@ -52,41 +39,28 @@
               <span class="about-me-value">Principality of Zeon</span>
             </li>
             <li>
-              Dexterity: <span class="about-me-value">usually left-handed</span>
+              Dexterity:
+              <span class="about-me-value">mostly left-handed</span>
             </li>
             <li>
               MBTI:
-              <span class="about-me-value"
-                >MBTI was debunked... but probably E/INFP-T last time I did it
-                years ago</span
-              >
+              <span class="about-me-value">MBTI was debunked... but probably E/INFP-T last time I did it      
+                years ago</span>
             </li>
-            <li>Sign: <span>Scales</span></li>
+            <li>Sign:
+              <span class="about-me-value">Libra</span>
+            </li>
           </ul>
         </section>
 
-        <section>
-          <h1>Contact</h1>
-          <p>
-            I don't want any more of my contact info to be scraped and sold,
-            thank you! Let's all thank capitalism for ruining the Web for all of
-            us.
-          </p>
-        </section>
-
-        <section>
-          <iframe
-            id="chattable"
-            src="https://iframe.chat/embed?chat=x3n1-chat"
-          ></iframe>
-        </section>
+      <!-- {% include '_chat.html' %} -->
       </aside>
 
-      <main>{{ content }}</main>
+      <main class="container">{{ content }}</main>
 
       <aside id="sidebar-right" class="container">
         <section>
-          Navigation:
+          <h3>Navigation:</h3>
           <nav>
             <ul>
               <li><a href="about-me.html">About me</a></li>
@@ -103,45 +77,18 @@
           </nav>
         </section>
         <section>
-          <p>This site is <span id="site-age">???</span> days old</p>
+          <p>This site is {% siteAge %} days old</p>
           <p>
-            This site was last updated at
-            <span id="site-updated-at">???</span>
+            This site was last updated at {% lastUpdated %}
           </p>
-          <p>Congrats! You're viewer #<span id="visit-counter">???</span></p>
+
+          <p>Congrats! You\'re viewer #{% visitCounter %}</p>
         </section>
       </aside>
     </div>
 
-    <footer>
-      <h4>Copyright 2025-<span id="current-year"></span> x3n1</h4>
-    </footer>
+    {% include '_footer.html' %}
 
-    <script>
-      chattable.initialize({});
-
-      const currentYear = new Date().getFullYear();
-      document.getElementById("current-year").innerText = currentYear;
-
-      const myCurrentAge = currentYear - 1996;
-      document.getElementById("my-current-age").innerText = myCurrentAge;
-
-      (async () => {
-        const res = await fetch(
-          "https://neocities.org/api/info?sitename=x3n1",
-          {
-            headers: {
-              "Access-Control-Allow-Origin": "https://neocities.org",
-            },
-          }
-        );
-        const siteInfo = await res.json();
-        console.table(siteInfo);
-        document.getElementById("site-updated-at").innerText = siteInfo.info;
-        document.getElementById("visit-counter").innerText = new Date(
-          siteInfo.info.last_updated
-        ).toUTCString();
-      })();
-    </script>
+    <script></script>
   </body>
 </html>
