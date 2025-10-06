@@ -16,7 +16,7 @@ jobs:
       - name: Build site
         run: pnpm exec eleventy
       - name: Deploy build to Neocities
-        uses: bcomnes/deploy-to-neocities@039f475bcbc0649c20e988cfec0b080d409546ab
+        uses: bcomnes/deploy-to-neocities@64cd6c4a38eeeec7c4e3534eee3165a32c21e773
         with:
           api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
           cleanup: false
